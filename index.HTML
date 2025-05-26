@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego para Mi Novia 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+    body {
+      font-family: "Pixelify Sans", sans-serif;
+      background: #ffe6f0;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #d63384;
+    }
+    .heart {
+      font-size: 50px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .heart:hover {
+      transform: scale(1.2);
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #555;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .btn-reset {
+      font-family: "Pixelify Sans", sans-serif;
+      margin-top: 20px;
+      background: #ff4d6d;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn-reset:hover {
+      background: #c9184a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Haz clic en el corazón para ver cuánto te quiero 💘</h1>
+  <div class="heart" onclick="mostrarMensaje()">❤️</div>
+  <div class="message" id="mensaje">Haz clic en el corazón para empezar ✨</div>
+  <button class="btn-reset" onclick="reiniciarJuego()">Reiniciar</button>
+
+  <script>
+    const mensajes = [
+      "Nunca encontré un trébol de cuatro hojas",
+      "Pero te encontré a ti",
+      "Supongo que todos llamamos a la suerte por un nombre",
+      "Y la mía tiene el tuyo 💕"
+    ];
+
+    let indiceMensaje = 0;
+
+    function mostrarMensaje() {
+      if (indiceMensaje < mensajes.length) {
+        document.getElementById("mensaje").textContent = mensajes[indiceMensaje];
+        indiceMensaje++;
+      } else {
+        document.getElementById("mensaje").textContent = "¡TE QUIERO ANGELA! 💌";
+      }
+    }
+
+    function reiniciarJuego() {
+      indiceMensaje = 0;
+      document.getElementById("mensaje").textContent = "Haz clic en el corazón para empezar ✨";
+    }
+  </script>
+</body>
+</html>
